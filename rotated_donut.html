@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>d3 rotated pie</title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="./d3_donut.js"></script>
+</head>
+<body>
+	<div id="donut-chart">
+	</div>
+	<script>
+		$(document).ready(function(){
+			var donut = D3Donut;
+			donut.initialize("#donut-chart", "chart", "legend");
+			var data = [{"cat": "Level1", "val": 102},
+						{"cat": "Level2", "val": 83},
+						{"cat": "Level3", "val": 71},
+						{"cat": "Level4", "val": 50},
+						{"cat": "Level5", "val": 30}];
+			var _tdata = [{"type": "scan_result", "data": data}];
+			donut.view(data);
+			// manually trigger level 1
+			// d3.select(".level1").dispatch("click");
+		});
+	</script>
+</body>
+</html>
